@@ -16,7 +16,6 @@ function SimpleSymbols(str) {
     
     let alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     let cleanStr = str.toLowerCase();
-    let check = '+';
     
     for (i = 0; i <= str.length; i++){
         if ((alpha.includes(cleanStr[i])) && ((cleanStr[i-1] !== '+') || (cleanStr[i+1] !== '+'))){
