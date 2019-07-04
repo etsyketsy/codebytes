@@ -18,25 +18,26 @@ function LongestWord(sen) {
     let longestWord = inputArray[0];
     let count = 0;
     let tempCount = 0;
-    let alpha = "abcdefghijklmnopqrstuvwxyz".split('');
+    let alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
 
     // loop through words in array comparing length
-    for (let i = 0; i < inputArray.length; i++) {
-        if (inputArray[i].length > longest.length) {
-
-            //count length of word without punctuation
-            for (let j = 0; j < inputArray[i].length; i++) {
-                if (alpha.includes(inputArray[i][j]){
+    for (i = 0; i <= inputArray.length-1; i++) {
+        if (count < inputArray[i].length){
+            //reset tempCount and check length of word without punctuation 
+            tempCount = 0;
+            for (j = 0; j <= inputArray[i].length-1; j++){
+                if (alpha.includes(inputArray[i][j])){
                     tempCount += 1;
                 }
-                // check against original word count and reset temporary counter
-                if (tempCount > count) {
-                    longestWord = inputArray[i];
-                    count = tempCount;
-                    tempCount = 0;
-                }
             }
+            
+            //compare tempCount with longestWord count
+
+            if (tempCount > count){
+                count = tempCount;
+                longestWord = inputArray[i]
+            }            
         }
     }
-    return longest;
+    return longestWord;
 }
